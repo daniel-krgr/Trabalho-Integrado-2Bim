@@ -3,10 +3,12 @@
 
     <solid android:color="#FFFFFF"/>
 
+
+
 <!--    <gradient-->
 <!--        android:startColor="#FFFFFF"-->
-<!--        android:centerColor="#83A1DC"-->
-<!--        android:endColor="#2C3B87"-->
+<!--        android:centerColor="#FFFFFF"-->
+<!--        android:endColor="#4b66eb"-->
 <!--        android:angle="270"/>-->
 
 </shape>
