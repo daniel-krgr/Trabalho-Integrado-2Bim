@@ -17,7 +17,7 @@
 
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/llLogoNome"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:orientation="horizontal"
@@ -26,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
             <ImageView
-                android:id="@+id/logo_trabalho"
+                android:id="@+id/logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/logo_trabalho_integrado"
@@ -54,7 +54,7 @@
             android:layout_marginTop="30dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/llLogoNome"
             />
 
         <EditText
