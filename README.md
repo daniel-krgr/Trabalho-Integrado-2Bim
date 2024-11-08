@@ -15,3 +15,4 @@ estudos (usa ferramentas como Google Classroom e aplicativos de notas).
   * Dificuldade em se organizar entre estudos, atividades extracurriculares e lazer.
   * Falta de motivação para estudar usando métodos tradicionais (papel, caderno).
   * Usar várias ferramentas dispersas para organizar tarefas escolares e pessoais.
+  * teste
