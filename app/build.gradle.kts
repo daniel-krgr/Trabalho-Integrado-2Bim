@@ -32,6 +32,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.navigation.fragment.ktx)
+
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -40,4 +45,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 
+
 public class CadastroActivity extends AppCompatActivity {
 
     private EditText edNome, edEmil, edDataNascimento, edTelefone, edSenha, edSenhaNovamente;
