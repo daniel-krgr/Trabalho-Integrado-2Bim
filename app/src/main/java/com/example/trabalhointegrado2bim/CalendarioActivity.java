@@ -1,7 +1,10 @@
 package com.example.trabalhointegrado2bim;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CalendarView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +22,8 @@ public class CalendarioActivity extends AppCompatActivity {
 
     CalendarView calendarView;
     Calendar calendar;
+    TextView tvSwitchAtividades;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,18 @@ public class CalendarioActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-            calendarView = findViewById(R.id.calendarView);
+            tvSwitchAtividades = findViewById(R.id.tvSwitchAtividades);
+
+            tvSwitchAtividades.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(CalendarioActivity.this, AtividadesActivity.class);
+
+                    startActivity(intent);
+                }
+            });
+
+                    calendarView = findViewById(R.id.calendarView);
             calendar = Calendar.getInstance();
 
             setDate(calendar.get(Calendar.DAY_OF_MONTH), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.YEAR));

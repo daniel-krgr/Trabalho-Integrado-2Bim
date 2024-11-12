@@ -6,7 +6,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AtividadesActivity">
+    tools:context=".AtividadesActivity"
+    android:background="@color/cinza_claro">
 
     <TextView
         style="@style/ContainerComponents"
@@ -32,20 +33,21 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            style="@style/ContainerTodosOsCantosAzul"
-            android:id="@+id/viewSwitch1"
+            android:id="@+id/tvSwitchCalendario"
             android:text="@string/meu_calendario"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight="1"
             />
 
         <TextView
-            android:id="@+id/viewSwitch2"
+            style="@style/ContainerTodosOsCantosAzul"
+            android:id="@+id/tvSwitchAtividades"
             android:text="@string/minhas_atividades"
             android:gravity="center"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight="1"

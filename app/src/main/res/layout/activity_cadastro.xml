@@ -13,25 +13,17 @@
         tools:context=".CadastroActivity"
         android:background="@drawable/background">
 
-        <View
+        <TextView
             style="@style/ContainerComponents"
             android:id="@+id/view"
+            android:text="@string/meu_ritmo_e_rumo"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
-
-        <TextView
-            android:id="@+id/tvAppName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="@id/view"
-            app:layout_constraintEnd_toEndOf="@id/view"
-            app:layout_constraintTop_toTopOf="@id/view" />
 
         <TextView
             android:id="@+id/tvCadastreSe"

@@ -33,7 +33,7 @@
 
         <TextView
             style="@style/ContainerTodosOsCantosAzul"
-            android:id="@+id/viewSwitch1"
+            android:id="@+id/tvSwitchCalendario"
             android:text="@string/meu_calendario"
             android:gravity="center"
             android:textColor="@color/white"
@@ -43,7 +43,7 @@
             />
 
         <TextView
-            android:id="@+id/viewSwitch2"
+            android:id="@+id/tvSwitchAtividades"
             android:text="@string/minhas_atividades"
             android:gravity="center"
             android:layout_width="match_parent"
