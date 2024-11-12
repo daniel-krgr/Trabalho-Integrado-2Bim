@@ -12,5 +12,6 @@
     <color name="pink_light">#F899b9</color>
     <color name="cinza">#808080</color>
     <color name="azul_principal">#4B66EB</color>
+    <color name="cinza_claro">#EBEFFF</color>
 
 </resources>

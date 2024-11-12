@@ -7,6 +7,18 @@
         <item name="android:background">@drawable/container_components</item>
     </style>
 
+    <style name="ContainerTodosOsCantos">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/container_todos_os_cantos</item>
+    </style>
+
+    <style name="ContainerTodosOsCantosAzul">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/container_todos_os_cantos_azul</item>
+    </style>
+
     <style name="Edit_Text">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>

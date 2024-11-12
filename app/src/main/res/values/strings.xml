@@ -2,5 +2,8 @@
     <string name="app_name">Ritmo &amp; Rumo</string>
     <string name="entrar">Entrar</string>
     <string name="text_cadastro">Crie sua conta</string>
+    <string name="minhas_atividades">Minhas atividades</string>
+    <string name="meu_calendario">Meu calendario</string>
+    <string name="meu_ritmo_e_rumo">Meu Ritmo &amp; Rumo</string>
 
 </resources>

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.TrabalhoIntegrado2Bim"
         tools:targetApi="31" >
         <activity
+            android:name=".AtividadesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CalendarioActivity"
+            android:exported="false" />
+        <activity
             android:name=".CadastroActivity"
             android:exported="false" />
         <activity
