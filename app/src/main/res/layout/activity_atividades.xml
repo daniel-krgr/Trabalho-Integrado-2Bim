@@ -45,22 +45,23 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            style="@style/ContainerTodosOsCantosAzul"
             android:id="@+id/tvSwitchCalendario"
             android:text="@string/meu_calendario"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_weight="1"
             />
 
         <TextView
+            style="@style/ContainerTodosOsCantosAzul"
             android:id="@+id/tvSwitchAtividades"
             android:text="@string/minhas_atividades"
+            android:textColor="@color/white"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             />
 
