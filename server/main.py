@@ -21,7 +21,7 @@ class Database:
                 user=self.user,
                 password=self.password
             )
-            self.cursor = self.connection.cursor()
+            self.cursor = self.connection.cursor(dictionary=True)
             print("Conexão com o banco de dados bem-sucedida")
         except mysql.connector.Error as err:
             print(f"Erro de conexão: {err}")

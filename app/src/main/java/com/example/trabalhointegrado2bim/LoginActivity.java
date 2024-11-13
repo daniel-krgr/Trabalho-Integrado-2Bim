@@ -19,6 +19,7 @@ import com.example.trabalhointegrado2bim.request.LoginRequestBody;
 import com.example.trabalhointegrado2bim.request.LoginResponse;
 import com.example.trabalhointegrado2bim.request.RetrofitClient;
 import com.example.trabalhointegrado2bim.util.HashUtil;
+import com.example.trabalhointegrado2bim.model.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 
 import retrofit2.Call;
@@ -116,6 +117,12 @@ public class LoginActivity extends AppCompatActivity {
                         String id = response.body().getId();            // Obtenha o ID
                         String usuario = response.body().getUsuario();  // Obtenha o nome do usuário
 
+                        // repassa os valores para class
+                        // Cria um objeto Usuario com os dados retornados
+                        Usuario usuarioObj = new Usuario();
+                        usuarioObj.setId(Integer.parseInt(id));
+                        usuarioObj.setNome(usuario);
+
                         mostrarSnackbar(view, mensagem[1], Color.GREEN, Color.WHITE);
 
                         // Redireciona para a tela principal após o login bem-sucedido
@@ -123,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
                         //startActivity(intent);
                         //finish();
                         Intent intent = new Intent(LoginActivity.this, CalendarioActivity.class);
+                        intent.putExtra("usuarioObj", usuarioObj); // Passa o objeto `Usuario`
                         startActivity(intent);
 
                     } else {
