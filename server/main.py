@@ -37,10 +37,10 @@ class Database:
         """Insere um novo usuário na tabela usuario."""
         try:
             query = """
-            INSERT INTO usuario (nome, email, data_aniversario, phone, senha)
-            VALUES (%s, %s, %s, %s, %s)
+            INSERT INTO usuario (nome, email, phone, senha)
+            VALUES (%s, %s, %s, %s)
             """
-            self.cursor.execute(query, (nome, email, data_aniversario, telefone, senha))
+            self.cursor.execute(query, (nome, email, telefone, senha))
             self.connection.commit()
             print("Usuário inserido com sucesso.")
             return self.cursor.lastrowid  # Retorna o ID do usuário inserido
@@ -49,14 +49,48 @@ class Database:
             self.connection.rollback()
             return None
 
+    def get_usuario(self, email, senha):
+        """Consulta o usuário pelo email e senha."""
+        try:
+            query = """
+            SELECT * FROM usuario WHERE email = %s AND senha = %s
+            """
+            self.cursor.execute(query, (email, senha))
+            return self.cursor.fetchone()  # Retorna o usuário encontrado, ou None se não encontrado
+        except mysql.connector.Error as err:
+            print(f"Erro ao consultar usuário: {err}")
+            return None
+
 # Routes
 @app.route("/login", methods=["POST"])
-def ping():
-    return jsonify({
-        "id": "1",
-        "usuario":"Ricardo",
-        "status":"true"
-    })
+def login():
+    dados = request.get_json()
+
+    print(request.get_json())
+
+    email = dados.get("email")
+    senha = dados.get("senha")
+
+    # Conecta ao banco e consulta o usuário
+    db = Database()
+    db.connect()
+    usuario = db.get_usuario(email, senha)
+    db.close()
+
+    if usuario:
+        # Retorna os dados do usuário como resposta de sucesso
+        return jsonify({
+            "id": usuario["idusuario"],
+            "usuario": usuario["nome"],
+            "status": "true",
+            "message": "Login bem-sucedido"
+        })
+    else:
+        # Retorna uma mensagem de erro se o login falhar
+        return jsonify({
+            "status": "false",
+            "message": "Email ou senha incorretos"
+        }), 200
 
 @app.route("/cadastro", methods=["POST"])
 def cadastro():

@@ -18,6 +18,7 @@ import com.example.trabalhointegrado2bim.request.ApiService;
 import com.example.trabalhointegrado2bim.request.CadastroUserRequestBody;
 import com.example.trabalhointegrado2bim.request.CadastroUserResponse;
 import com.example.trabalhointegrado2bim.request.RetrofitClient;
+import com.example.trabalhointegrado2bim.util.HashUtil;
 import com.google.android.material.snackbar.Snackbar;
 
 import retrofit2.Call;
@@ -93,9 +94,11 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void fazerCadastro(View view, String nome, String email, String dNascimento, String nPhone, String senha) {
+        // converter a senha em um hash
+        String senhaHashMD5 = HashUtil.toMD5(senha);
         // Configura o Retrofit e chama o endpoint de login
         ApiService apiService = RetrofitClient.getClient().create(ApiService.class);
-        CadastroUserRequestBody cadastroUserRequest = new CadastroUserRequestBody(nome,email,dNascimento,nPhone,senha);
+        CadastroUserRequestBody cadastroUserRequest = new CadastroUserRequestBody(nome,email,dNascimento,nPhone,senhaHashMD5);
 
         // Executa a chamada assíncrona
         apiService.cadastro(cadastroUserRequest).enqueue(new Callback<CadastroUserResponse>() {

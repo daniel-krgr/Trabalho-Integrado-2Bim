@@ -18,6 +18,7 @@ import com.example.trabalhointegrado2bim.request.ApiService;
 import com.example.trabalhointegrado2bim.request.LoginRequestBody;
 import com.example.trabalhointegrado2bim.request.LoginResponse;
 import com.example.trabalhointegrado2bim.request.RetrofitClient;
+import com.example.trabalhointegrado2bim.util.HashUtil;
 import com.google.android.material.snackbar.Snackbar;
 
 import retrofit2.Call;
@@ -98,9 +99,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void fazerLogin(View view, String usuario, String senha) {
+        // converter a senha em hash md5
+        String senhaHashMD5 = HashUtil.toMD5(senha);
         // Configura o Retrofit e chama o endpoint de login
         ApiService apiService = RetrofitClient.getClient().create(ApiService.class);
-        LoginRequestBody loginRequest = new LoginRequestBody(usuario, senha);
+        LoginRequestBody loginRequest = new LoginRequestBody(usuario, senhaHashMD5);
 
         // Executa a chamada assíncrona
         apiService.login(loginRequest).enqueue(new Callback<LoginResponse>() {
@@ -109,6 +112,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     boolean success = "true".equalsIgnoreCase(response.body().getStatus());
                     if (success) {
+                        // recupera outros dados da resposta
+                        String id = response.body().getId();            // Obtenha o ID
+                        String usuario = response.body().getUsuario();  // Obtenha o nome do usuário
+
                         mostrarSnackbar(view, mensagem[1], Color.GREEN, Color.WHITE);
 
                         // Redireciona para a tela principal após o login bem-sucedido
