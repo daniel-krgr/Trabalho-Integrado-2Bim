@@ -112,9 +112,12 @@ public class LoginActivity extends AppCompatActivity {
                         mostrarSnackbar(view, mensagem[1], Color.GREEN, Color.WHITE);
 
                         // Redireciona para a tela principal após o login bem-sucedido
-                        Intent intent = new Intent(LoginActivity.this, TelaPrincipalActivity.class);
+                        //Intent intent = new Intent(LoginActivity.this, TelaPrincipalActivity.class);
+                        //startActivity(intent);
+                        //finish();
+                        Intent intent = new Intent(LoginActivity.this, CalendarioActivity.class);
                         startActivity(intent);
-                        finish();
+
                     } else {
                         mostrarSnackbar(view, "Falha no login", Color.RED, Color.WHITE);
                     }
