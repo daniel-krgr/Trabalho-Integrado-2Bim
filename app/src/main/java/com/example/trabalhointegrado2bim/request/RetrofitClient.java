@@ -5,7 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static Retrofit retrofit = null;
-    private static final String BASE_URL = "http://192.168.37.159:3011";
+    // lembrar de trocar o ip do servidor
+    // e colocar o ip na lista do network_security_config.xml
+    private static final String BASE_URL = "http://192.168.1.107:3011";
 
     // Método para obter a instância Retrofit
     public static Retrofit getClient() {
