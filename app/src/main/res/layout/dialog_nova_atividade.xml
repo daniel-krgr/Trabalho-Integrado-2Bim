@@ -51,23 +51,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSalvar"
-        style="@style/Button"
-        android:text="Salvar"
-        app:layout_constraintTop_toBottomOf="@id/etData"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnCancelar"
-        style="@style/Button"
-        android:text="Cancelar"
-        android:backgroundTint="@color/cinza"
-        app:layout_constraintTop_toBottomOf="@id/btnSalvar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
